@@ -13,14 +13,10 @@
   <link href="https://fonts.googleapis.com/css2?family=K2D:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
   <title>Sphere</title>
- 
+
 </head>
 
 <body>
-
-
-
-
 
   <input id="menu__toggle" class="menu__input" type="checkbox" />
   <label class="menu__btn" for="menu__toggle">
@@ -35,24 +31,22 @@
     <li><a class="menu__item" href="#">GitHub</a></li>
   </ul>
 
-
-
   </div>
 
   <div class="front-page">
 
     <header class="front-page__header">
+
       <div>
         <h1 class="front-page__logo" id="Logo">Sphere</h1>
       </div>
 
     </header>
 
-
     <section class="front-page__Sphere animate" id="animation">
       <figure class="ball">
         <span class="shadow"></span>
-        <span class="iris"></span>
+        <span id="iris" class="iris"></span>
       </figure>
     </section>
 
@@ -67,35 +61,27 @@
 
   </div>
 
-  <div id="secondSection">
-
-
+  <div id="secondSection" class="secondSection">
 
     <form class="question-page__question-container" method="dialog">
       <div class="question-page__question-form">
 
-        <input type="text" class="question-input" placeholder="Ask me question">
-
-        <button class="question-page__clearButton" type="submit">clear</button>
-
+        <input type="text" id="questionInput" class="question-input"  placeholder="Ask me question">
+        <input class="question-page__clearButton" type="reset" value="Clear" />
+        
       </div>
     </form>
 
     <div class="tellme-container">
 
-      <button class="tellme-firstButton">tell me fun fact</button>
-      <button class="tellme-secondButton">tell me a joke</button>
+      <button class="tellme-firstButton">Tell me fun fact</button>
+      <button class="tellme-secondButton">Tell me a joke</button>
 
     </div>
 
-    <div class="question-page__answer" >
-      <textarea type="text" class="answer-input" style="overflow:hidden"></textarea>
-    </div>
-
-
+    <div class="question-page__answer"></div>
 
   </div>
-
 
   <script src="./app.js"></script>
 

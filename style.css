@@ -2,13 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
 }
 
 
 body {
   background-color: #654F6F;
   font-family: 'K2D', sans-serif;
+  /* overflow: hidden; */
 }
 
 
@@ -26,6 +26,7 @@ body {
 
 .front-page__logo {
   font-size: 96px;
+
 }
 
 .front-page__header {
@@ -71,11 +72,6 @@ body {
   
   }
 
- /* .front-page__Sphere.animate {
-  margin-top: -500px;
-
-}   */
-
 
 @keyframes move-eye-skew {
   0% {
@@ -102,31 +98,42 @@ body {
   }
 }
 
-
-/* @keyframes move-eye-skew2 {
+@keyframes move-eye-skew2 {
   0% {
     transform: none;
   }
 
   20% {
-    transform: translateX(80%) translateY(50%) s;
+    transform: translateX(-80px) translateY(120px) scale(0.95);
   }
 
   25%,
-  44% {
-    transform: none;
+  34% {
+    transform:  translateY(160px) scale(0.95);
   }
 
-  50%,
+  40%,
+  50% {
+    transform: translateX(130px) translateY(160px) scale(0.95);  
+  }
+
+  56%,
   60% {
-    transform: translateX(68px) translateY(-40px) skewX(5deg) skewY(2deg) scaleX(0.95);
-  }
+    transform: translateX(80px) translateY(40px) scale(0.95);
 
-  66%,
+  }
+  70%,
+  80% {
+    transform: translateX(-120px) translateY(20px) scale(0.95);
+  }
+  85%,
   100% {
     transform: none;
   }
-} */
+}
+
+
+
 
 .ball {
   display: inline-block;
@@ -195,18 +202,13 @@ body {
 /* SEKCAJ PYTAN I ODPOWIEDZI */
                    
 
-#secondSection{
-  animation: fade-in 8s forwards ;
+.secondSection{
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  transition-delay: 2s;
 }
 
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+
 
 .question-page__question-container {
   margin-top: 20px;
@@ -231,6 +233,7 @@ body {
   background-color: #B6A6CA;
   color: #654F6F;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+  cursor: pointer;  
 }
 
 
@@ -247,25 +250,15 @@ body {
 }
 
 .question-page__answer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: 1rem auto;
   height: 400px;
-}
-
-.answer-input {
-  padding: 8px;
-  width: 400px;
-  max-width: 400px;
-  height: 300px;
-  max-height: 300px;
+  width: 500px;
   border-radius: 8px;
-  border-color: transparent;
   background-color: #B6A6CA;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
-  outline: transparent;
   color: #553555;
 }
+
 
 .tellme-container{
   display: flex;
@@ -283,6 +276,7 @@ body {
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
   border:  none;
   margin-right: 20px;
+  cursor: pointer; 
 }
 
 
@@ -295,6 +289,7 @@ body {
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
   border:  none;
   margin-left: 20px;
+  cursor: pointer; 
 }
 
 
@@ -335,7 +330,7 @@ body {
   width: 26px;
   height: 26px;
   cursor: pointer;
-  z-index: 1;
+  z-index: 1001;
 }
 .menu__btn > span,
 .menu__btn > span::before,
@@ -356,6 +351,7 @@ body {
   top: 8px;
 }
 .menu__box {
+  z-index: 1000;
   display: block;
   position: fixed;
   top: 0;
