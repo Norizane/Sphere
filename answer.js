@@ -119,7 +119,13 @@ const answers = [
   "The universe is chaotic",
 ];
 
-const getAnswer = (question) => {
-  const randomNumber = 2;
-  return answers[randomNumber]
+const getAnswer = (answers) => {
+  const randomNumber = Math.floor(Math.random() * answers.length);
+  return answers[randomNumber];
 };
+
+document.getElementById("questionInput").addEventListener("keyup", function(event) {
+  if (event.key === "Enter") {
+    const losowy = getAnswer(answers);
+    document.getElementById("answerOutput").textContent = losowy;  }
+});

@@ -67,23 +67,27 @@
       <div class="question-page__question-form">
 
         <input type="text" id="questionInput" class="question-input"  placeholder="Ask me question">
-        <input class="question-page__clearButton" type="reset" value="Clear" />
+        <input  class="question-page__clearButton" type="reset" value="Clear" />
+
         
       </div>
     </form>
 
     <div class="tellme-container">
 
-      <button class="tellme-firstButton">Tell me fun fact</button>
-      <button class="tellme-secondButton">Tell me a joke</button>
+      <button id="factButton" class="tellme-firstButton">Tell me fun fact</button>
+      <button id="jokeButton" class="tellme-secondButton">Tell me a joke</button>
 
     </div>
 
-    <div class="question-page__answer"></div>
+    <div id="answerOutput" class="question-page__answer"></div>
 
   </div>
 
   <script src="./app.js"></script>
+  <script src="./answer.js"></script>
+  <script src="./tellMeJoke.js"></script>
+  <script src="./tellMeFact.js"></script>
 
 </body>
 
