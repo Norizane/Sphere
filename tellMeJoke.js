@@ -54,7 +54,18 @@ const getJoke = (jokes) => {
   return jokes[randomNumber];
 };
 
-document.getElementById("jokeButton").addEventListener("click", function() {
+document.getElementById("jokeButton").addEventListener("click", () => {
   const randomJoke = getJoke(jokes);
-  document.getElementById("answerOutput").textContent = randomJoke; 
+
+  const jokeParagraph =  document.createElement("p");
+
+  jokeParagraph.innerHTML = randomJoke;
+  jokeParagraph.classList.add("answer-text"); 
+
+  jokeParagraph.style.marginLeft = '80px';
+  
+  const answerOutput = document.getElementById("answerOutput");
+
+  answerOutput.appendChild(jokeParagraph);
 });
+

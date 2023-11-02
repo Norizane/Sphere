@@ -56,7 +56,19 @@ const getFact = (facts) => {
   return facts[randomNumber];
 };
 
-document.getElementById("factButton").addEventListener("click", function() {
-  const randomFact = getFact(facts);
-  document.getElementById("answerOutput").textContent = 'Sure\n' + randomFact; 
+
+document.getElementById("factButton").addEventListener("click", () => {
+  const randomFact = getJoke(jokes);
+
+  const factParagraph =  document.createElement("p");
+
+  factParagraph.innerHTML = randomFact;
+  factParagraph.classList.add("answer-text"); 
+
+  factParagraph.style.marginLeft = '80px';
+  
+  const answerOutput = document.getElementById("answerOutput");
+
+  answerOutput.appendChild(factParagraph);
 });
+

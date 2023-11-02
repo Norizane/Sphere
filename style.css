@@ -228,7 +228,8 @@ body {
 
 .question-page__clearButton {
   padding: 8px;
-  border-radius: 0 8px 8px 0;
+  border-radius: 8px;
+  margin-left: 5px;
   border-color: transparent;
   background-color: #B6A6CA;
   color: #654F6F;
@@ -240,7 +241,7 @@ body {
 .question-input {
   padding: 8px;
   width: 400px;
-  border-radius: 8px 0 0 8px;
+  border-radius: 8px ;
   border-color: transparent;
   background-color: #B6A6CA;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
@@ -253,7 +254,7 @@ body {
   padding: 10px;
   margin: 1rem auto;
   height: 400px;
-  width: 500px;
+  width: 600px;
   border-radius: 8px;
   background-color: #B6A6CA;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
@@ -382,3 +383,30 @@ body {
 
 /* KONIEC ANIMOWANEGO MENU  */
 
+.joke-text{
+  width: 500px;
+  flex-shrink: inherit;
+  background-color: white;
+  padding: 8px;
+  border-radius:  8px 1px 8px 8px;
+  margin: 6px 0px;
+}
+
+.question-text{
+  width: 500px;
+  flex-shrink: inherit;
+  background-color: #654F6F;
+  color: white;
+  padding: 8px;
+  border-radius:  1px 8px 8px;
+  margin: 6px 0px;
+}
+ 
+.answer-text{
+  width: 500px;
+  flex-shrink: inherit;
+  background-color: white;
+  padding: 8px;
+  border-radius:  8px 1px 8px 8px;
+  margin: 6px 0px;
+}
