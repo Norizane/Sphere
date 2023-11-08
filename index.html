@@ -66,10 +66,11 @@
     <form class="question-page__question-container" method="dialog">
       <div class="question-page__question-form">
 
-        <input type="text" id="questionInput" class="question-input"  placeholder="Ask me question">
-        <input  class="question-page__clearButton" type="reset" value="Clear" />
+        <input type="text" id="questionInput" class="question-input" placeholder="Ask me question">
+        <button class="question-page__clearButton material-symbols-outlined" type="reset">
+          disabled_by_default
+        </button>
 
-        
       </div>
     </form>
 
@@ -80,7 +81,7 @@
 
     </div>
 
-    <div  class="question-page__answer">
+    <div class="question-page__answer">
 
       <div id="answerOutput" class="answerContainer">
 
@@ -90,10 +91,7 @@
 
   </div>
 
-  <script src="./app.js"></script>
-  <script src="./answer.js"></script>
-  <script src="./tellMeJoke.js"></script>
-  <script src="./tellMeFact.js"></script>
+ 
 
 </body>
 

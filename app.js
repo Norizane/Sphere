@@ -1,3 +1,7 @@
+import './style.css';
+import { initTextBoxBehavior  } from './src/logic/textBox'
+import {initAnswerBehavior} from './src/logic/answer';
+
 const animateScrollDown = () => {
   const element = document.getElementById("animation");
   const footer = document.getElementById("footerSection");
@@ -10,15 +14,15 @@ const animateScrollDown = () => {
 
 const animateQuestionSection = () => {
   const element = document.getElementById("secondSection");
-  
+
   element.style.opacity = 1;
 };
 
 const animationChange = () => {
   const iris = document.getElementById("iris");
-  
+
   iris.style.animation = " move-eye-skew2 5s ease-out infinite";
-}
+};
 
 window.addEventListener("wheel", () => {
   animateQuestionSection();
@@ -26,3 +30,5 @@ window.addEventListener("wheel", () => {
   animationChange();
 });
 
+initTextBoxBehavior();
+initAnswerBehavior();

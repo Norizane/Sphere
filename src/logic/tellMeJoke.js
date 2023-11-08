@@ -1,4 +1,4 @@
-const jokes = [
+export const jokes = [
   "Why don't scientists trust atoms? Because they make up everything!",
   "I'm reading a book on anti-gravity. It's impossible to put down!",
   "Parallel lines have so much in common. It's a shame they'll never meet.",
@@ -49,23 +49,29 @@ const jokes = [
   "What did one wall say to the other wall? 'I'll meet you at the corner!'",
 ];
 
-const getJoke = (jokes) => {
+export const getJoke = (jokes) => {
   const randomNumber = Math.floor(Math.random() * jokes.length);
   return jokes[randomNumber];
 };
 
-document.getElementById("jokeButton").addEventListener("click", () => {
-  const randomJoke = getJoke(jokes);
 
-  const jokeParagraph =  document.createElement("p");
+// const displayJoke = () => {
+//   const randomJoke = getJoke(jokes);
 
-  jokeParagraph.innerHTML = randomJoke;
-  jokeParagraph.classList.add("answer-text"); 
+//   const jokeParagraph = document.createElement("p");
 
-  jokeParagraph.style.marginLeft = '80px';
-  
-  const answerOutput = document.getElementById("answerOutput");
+//   jokeParagraph.innerHTML = randomJoke;
+//   jokeParagraph.classList.add("answer-text");
+//   jokeParagraph.classList.add("answer-margin")
 
-  answerOutput.appendChild(jokeParagraph);
-});
 
+//   const answerOutput = document.getElementById("answerOutput");
+
+//   answerOutput.appendChild(jokeParagraph);
+// };
+
+// const jokeButton = document.getElementById("jokeButton");
+
+// jokeButton.addEventListener("click", () => {
+//   displayJoke();
+// });

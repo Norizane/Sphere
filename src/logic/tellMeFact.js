@@ -1,4 +1,4 @@
-const facts = [
+export const facts = [
   "Honey never spoils. Archaeologists have even found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible.",
   "The world's oldest known recipe is a recipe for beer.",
   "Bananas are berries, but strawberries aren't.",
@@ -50,25 +50,27 @@ const facts = [
   "Honey never spoils. Archaeologists have even found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible.",
 ];
 
-
-const getFact = (facts) => {
+export const getFact = (facts) => {
   const randomNumber = Math.floor(Math.random() * facts.length);
   return facts[randomNumber];
 };
 
+// const displayFacet = () => {
+//   const randomFact = getFact(facts);
 
-document.getElementById("factButton").addEventListener("click", () => {
-  const randomFact = getJoke(jokes);
+//   const factParagraph = document.createElement("p");
 
-  const factParagraph =  document.createElement("p");
+//   factParagraph.innerHTML = randomFact;
+//   factParagraph.classList.add("answer-text");
+//   jokeParagraph.classList.add("answer-margin")
 
-  factParagraph.innerHTML = randomFact;
-  factParagraph.classList.add("answer-text"); 
+//   const answerOutput = document.getElementById("answerOutput");
 
-  factParagraph.style.marginLeft = '80px';
-  
-  const answerOutput = document.getElementById("answerOutput");
+//   answerOutput.appendChild(factParagraph);
+// };
 
-  answerOutput.appendChild(factParagraph);
-});
+// const factButton = document.getElementById("factButton");
 
+// factButton.addEventListener("click", () => {
+//   displayFacet();
+// });

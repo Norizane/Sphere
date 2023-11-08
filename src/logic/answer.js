@@ -124,72 +124,39 @@ const getAnswer = (answers) => {
   return answers[randomNumber];
 };
 
-// document.getElementById("questionInput").addEventListener("keyup", function(event) {
-//   if (event.key === "Enter") {
-//     const random = getAnswer(answers);
-//     document.getElementById("answerOutput").textContent = random;  }
-// });
-
-// const showAnswerForQuestion = () =>{
-//   document.getElementById("questionInput")
-
-//   const random = getAnswer(answers);
-//     document.getElementById("answerOutput").textContent = random; 
-
-// }
-
-// const answerOutput = () =>{
-
-//   const questionInput = document.getElementById("questionInput");
-//   const questionText = questionInput.value; 
-
-//   const questionParagraph = document.createElement("p");
-//   questionParagraph.textContent = questionText; 
-
-//   questionParagraph.classList.add("question-text");
-
-//   const answerOutputElement = document.getElementById("answerOutput");
-//   // answerOutputElement.innerHTML = ''; 
-//   answerOutputElement.appendChild(questionParagraph);
-//   questionInput.value = '';
- 
-// }
-
-// window.addEventListener("keyup", (event) => {
-//   if(event.key === "Enter"){
-//   answerOutput();
-//   showAnswerForQuestion();
-//   }
-// });
-
-
 const showAnswerForQuestion = (question, answer) => {
   const answerOutput = document.getElementById("answerOutput");
   const questionParagraph = document.createElement("p");
   questionParagraph.textContent = question;
   questionParagraph.classList.add("question-text");
-  
+
   const answerParagraph = document.createElement("p");
   answerParagraph.textContent = answer;
   answerParagraph.classList.add("answer-text");
-  answerParagraph.style.marginLeft = '80px';
+  answerParagraph.classList.add("answer-margin")
 
   answerOutput.appendChild(questionParagraph);
   answerOutput.appendChild(answerParagraph);
-}
+};
 
 const answerOutput = () => {
   const questionInput = document.getElementById("questionInput");
   const questionText = questionInput.value;
-  questionInput.value = ''; 
+  questionInput.value = "";
 
   const randomAnswer = getAnswer(answers);
   showAnswerForQuestion(questionText, randomAnswer);
+};
+export const initAnswerBehavior = () => {
+  window.addEventListener("keyup", (event) => {
+    if (event.key === "Enter") {
+      answerOutput();
+    
+    }
+  });
 }
 
-window.addEventListener("keyup", (event) => {
-  if (event.key === "Enter") {
-    answerOutput();
-  }
-});
+
+
+
 
