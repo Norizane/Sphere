@@ -31,4 +31,3 @@ window.addEventListener("wheel", () => {
 });
 
 initTextBoxBehavior();
-initAnswerBehavior();

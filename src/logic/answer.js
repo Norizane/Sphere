@@ -1,4 +1,4 @@
-const answers = [
+export const answers = [
   "Yes",
   "No",
   "Maybe",
@@ -124,7 +124,7 @@ export const getAnswer = (answers) => {
   return answers[randomNumber];
 };
 
-// const showAnswerForQuestion = (question, answer) => {
+// export const showAnswerForQuestion = (question, answer) => {
 //   const answerOutput = document.getElementById("answerOutput");
 //   const questionParagraph = document.createElement("p");
 //   questionParagraph.textContent = question;
