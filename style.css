@@ -430,9 +430,6 @@ body {
   background-color: white;
   padding: 8px;
   border-radius: 8px 1px 8px 8px;
-  margin: 6px 0px;
+  margin: 6px 80px;
 }
 
-.answer-margin{
-  margin-left: 80px;
-}

@@ -55,22 +55,3 @@ export const getFact = (facts) => {
   return facts[randomNumber];
 };
 
-// const displayFacet = () => {
-//   const randomFact = getFact(facts);
-
-//   const factParagraph = document.createElement("p");
-
-//   factParagraph.innerHTML = randomFact;
-//   factParagraph.classList.add("answer-text");
-//   jokeParagraph.classList.add("answer-margin")
-
-//   const answerOutput = document.getElementById("answerOutput");
-
-//   answerOutput.appendChild(factParagraph);
-// };
-
-// const factButton = document.getElementById("factButton");
-
-// factButton.addEventListener("click", () => {
-//   displayFacet();
-// });

@@ -119,42 +119,42 @@ const answers = [
   "The universe is chaotic",
 ];
 
-const getAnswer = (answers) => {
+export const getAnswer = (answers) => {
   const randomNumber = Math.floor(Math.random() * answers.length);
   return answers[randomNumber];
 };
 
-const showAnswerForQuestion = (question, answer) => {
-  const answerOutput = document.getElementById("answerOutput");
-  const questionParagraph = document.createElement("p");
-  questionParagraph.textContent = question;
-  questionParagraph.classList.add("question-text");
+// const showAnswerForQuestion = (question, answer) => {
+//   const answerOutput = document.getElementById("answerOutput");
+//   const questionParagraph = document.createElement("p");
+//   questionParagraph.textContent = question;
+//   questionParagraph.classList.add("question-text");
 
-  const answerParagraph = document.createElement("p");
-  answerParagraph.textContent = answer;
-  answerParagraph.classList.add("answer-text");
-  answerParagraph.classList.add("answer-margin")
+//   const answerParagraph = document.createElement("p");
+//   answerParagraph.textContent = answer;
+//   answerParagraph.classList.add("answer-text");
+ 
 
-  answerOutput.appendChild(questionParagraph);
-  answerOutput.appendChild(answerParagraph);
-};
+//   answerOutput.appendChild(questionParagraph);
+//   answerOutput.appendChild(answerParagraph);
+// };
 
-const answerOutput = () => {
-  const questionInput = document.getElementById("questionInput");
-  const questionText = questionInput.value;
-  questionInput.value = "";
+// const answerOutput = () => {
+//   const questionInput = document.getElementById("questionInput");
+//   const questionText = questionInput.value;
+//   questionInput.value = "";
 
-  const randomAnswer = getAnswer(answers);
-  showAnswerForQuestion(questionText, randomAnswer);
-};
-export const initAnswerBehavior = () => {
-  window.addEventListener("keyup", (event) => {
-    if (event.key === "Enter") {
-      answerOutput();
+//   const randomAnswer = getAnswer(answers);
+//   showAnswerForQuestion(questionText, randomAnswer);
+// };
+// export const initAnswerBehavior = () => {
+//   window.addEventListener("keyup", (event) => {
+//     if (event.key === "Enter") {
+//       answerOutput();
     
-    }
-  });
-}
+//     }
+//   });
+// }
 
 
 

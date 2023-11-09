@@ -1,4 +1,4 @@
-// import { someData } from './answer.js';
+import { answers, getAnswer } from './answer.js';
 import { getJoke, jokes } from './tellMeJoke';
 import { getFact, facts } from './tellMeFact';
 
@@ -7,7 +7,7 @@ const displayTextBox = (text) => {
 
   Paragraph.innerHTML = text;
   Paragraph.classList.add("answer-text");
-  Paragraph.classList.add("answer-margin");
+  
 
   const answerOutput = document.getElementById("answerOutput");
 
@@ -26,5 +26,11 @@ export const initTextBoxBehavior = () => {
     const randomFact = getFact(facts);
     displayTextBox(randomFact);
   });
-  console.log("dupa")
+
+
+  window.addEventListener("keyup", (event) => {
+    if (event.key === "Enter") {
+      const answer = getAnswer(answers);
+      displayTextBox(answer);
+    }});
 }

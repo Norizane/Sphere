@@ -55,23 +55,3 @@ export const getJoke = (jokes) => {
 };
 
 
-// const displayJoke = () => {
-//   const randomJoke = getJoke(jokes);
-
-//   const jokeParagraph = document.createElement("p");
-
-//   jokeParagraph.innerHTML = randomJoke;
-//   jokeParagraph.classList.add("answer-text");
-//   jokeParagraph.classList.add("answer-margin")
-
-
-//   const answerOutput = document.getElementById("answerOutput");
-
-//   answerOutput.appendChild(jokeParagraph);
-// };
-
-// const jokeButton = document.getElementById("jokeButton");
-
-// jokeButton.addEventListener("click", () => {
-//   displayJoke();
-// });
