@@ -1,6 +1,6 @@
 import './style.css';
 import { initTextBoxBehavior  } from './src/logic/textBox'
-import {initAnswerBehavior} from './src/logic/answer';
+import {initAnswerBehavior} from './src/logic/textBoxData';
 
 const animateScrollDown = () => {
   const element = document.getElementById("animation");

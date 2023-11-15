@@ -21,8 +21,6 @@ body {
   flex-direction: column;
   align-items: center;
   color: #B6A6CA;
- 
-
 }
 
 .front-page__logo {
@@ -405,31 +403,25 @@ body {
 
 /* KONIEC ANIMOWANEGO MENU  */
 
-.joke-text {
-  width: 500px;
-  flex-shrink: inherit;
-  background-color: white;
-  padding: 8px;
-  border-radius: 8px 1px 8px 8px;
-  margin: 6px 0px;
-}
-
 .question-text {
   width: 500px;
-  flex-shrink: inherit;
   background-color: #654F6F;
   color: white;
-  padding: 8px;
   border-radius: 1px 8px 8px;
   margin: 6px 0px;
+  padding: 8px;
 }
 
-.answer-text {
+.textBox {
   width: 500px;
-  flex-shrink: inherit;
   background-color: white;
-  padding: 8px;
   border-radius: 8px 1px 8px 8px;
   margin: 6px 80px;
+  padding: 8px;
 }
 
+.scrollDownButton{
+  background: transparent;
+  border: none;
+  color: white;
+}

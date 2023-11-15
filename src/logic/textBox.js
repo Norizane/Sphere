@@ -1,31 +1,43 @@
-import { answers, getAnswer} from './answer.js';
-import { getJoke, jokes } from './tellMeJoke';
-import { getFact, facts } from './tellMeFact';
+import { facts, jokes, answers } from './textBoxData';
+
+const getTextBoxData = (data) => {
+  const randomNumber = Math.floor(Math.random() * data.length);
+  return data[randomNumber];
+};
 
 const displayTextBox = (text) => {
   const Paragraph = document.createElement("p");
-  const questionParagraph = document.createElement("p");
   const answerOutput = document.getElementById("answerOutput");
  
-
-  
-  questionParagraph.textContent = question;
-
   Paragraph.innerHTML = text;
 
-  questionParagraph.classList.add("question-text");
-  Paragraph.classList.add("answer-text");
+  Paragraph.classList.add("textBox");
   answerOutput.appendChild(Paragraph);
-  answerOutput.appendChild(questionParagraph);
+ 
 };
 
+const showAnswerForQuestion = (question, answer) => {
+  const answerOutput = document.getElementById("answerOutput");
+  const questionParagraph = document.createElement("p");
+  questionParagraph.textContent = question;
+  questionParagraph.classList.add("question-text");
+  
+
+  const answerParagraph = document.createElement("p");
+  answerParagraph.textContent = answer;
+  answerParagraph.classList.add("textBox");
+ 
+  answerOutput.appendChild(questionParagraph);
+  answerOutput.appendChild(answerParagraph);
+  
+};
 
 const answerOutput = () => {
   const questionInput = document.getElementById("questionInput");
   const questionText = questionInput.value;
   questionInput.value = "";
 
-  const randomAnswer = getAnswer(answers);
+  const randomAnswer = getTextBoxData(answers);
   showAnswerForQuestion(questionText, randomAnswer);
 };
 
@@ -33,40 +45,33 @@ const answerOutput = () => {
 export const initTextBoxBehavior = () => {
   const jokeButton = document.getElementById("jokeButton");
   const factButton = document.getElementById("factButton");
-  const questionInput = document.getElementById("questionInput");
-
   
 
   jokeButton.addEventListener("click", () => {
-    const randomJoke = getJoke(jokes);
+    const randomJoke = getTextBoxData(jokes);
     displayTextBox(randomJoke);
   });
 
   factButton.addEventListener("click", () => {
-    const randomFact = getFact(facts);
+    const randomFact = getTextBoxData(facts);
     displayTextBox(randomFact);
   });
 
-
-  windows.addEventListener("keyup", (event) => {
+  window.addEventListener("keyup", (event) => {
     if (event.key === "Enter") {
       answerOutput();
-    }});
+    }
+  });
+  //TODO:potential scroll down button
+  // scrollDownButton.addEventListener("click", (event) => {
+  //   const container = document.getElementById("questionContainer");
+  
+  //   if (event.deltaY > 0) {
+  //     container.scrollBy({
+  //       top: -1000,
+  //       behavior: "smooth",
+  //     });
+  //   } 
+  // });
 
-
-    // window.addEventListener("wheel", (event) => {
-    //   const container = document.getElementById("answerOutput")
-
-    //   if (event.deltaY > 0) {
-    //     container.scrollBy({
-    //       top: 100, 
-    //       behavior: "smooth"
-    //     });
-    //   } else {
-    //     container.scrollBy({
-    //       top: -100, 
-    //       behavior: "smooth"
-    //     });
-    //   }
-    // });
   }
