@@ -1,5 +1,16 @@
 import { facts, jokes, answers } from './textBoxData';
 
+
+const getStoredData = (key) => {
+  const storedData = localStorage.getItem(key);
+  return storedData ? JSON.parse(storedData) : null;
+};
+
+
+const setStoredData = (key, data) => {
+  localStorage.setItem(key, JSON.stringify(data));
+};
+
 const getTextBoxData = (data) => {
   const randomNumber = Math.floor(Math.random() * data.length);
   return data[randomNumber];
@@ -29,8 +40,15 @@ const showAnswerForQuestion = (question, answer) => {
  
   answerOutput.appendChild(questionParagraph);
   answerOutput.appendChild(answerParagraph);
+
+  const storedData = getStoredData("qaData") || [];
+  storedData.push({ question, answer });
+  setStoredData("qaData", storedData);
   
 };
+
+
+
 
 const answerOutput = () => {
   const questionInput = document.getElementById("questionInput");
@@ -45,16 +63,24 @@ const answerOutput = () => {
 export const initTextBoxBehavior = () => {
   const jokeButton = document.getElementById("jokeButton");
   const factButton = document.getElementById("factButton");
-  
+  const scrollDownButton = document.getElementById("scrollDownButton");
 
   jokeButton.addEventListener("click", () => {
     const randomJoke = getTextBoxData(jokes);
     displayTextBox(randomJoke);
+
+    const storedJokes = getStoredData("jokesData") || [];
+    storedJokes.push(randomJoke);
+    setStoredData("jokesData", storedJokes);
   });
 
   factButton.addEventListener("click", () => {
     const randomFact = getTextBoxData(facts);
     displayTextBox(randomFact);
+  
+    const storedFacts = getStoredData("factsData") || [];
+    storedFacts.push(randomFact);
+    setStoredData("factsData", storedFacts);
   });
 
   window.addEventListener("keyup", (event) => {
@@ -62,16 +88,29 @@ export const initTextBoxBehavior = () => {
       answerOutput();
     }
   });
-  //TODO:potential scroll down button
-  // scrollDownButton.addEventListener("click", (event) => {
-  //   const container = document.getElementById("questionContainer");
+
+  const storedQuestionsAndAnswers = getStoredData("qaData") || [];
+  storedQuestionsAndAnswers.forEach(({ question, answer }) => {
+    showAnswerForQuestion(question, answer);
+  });
+
+  const storedJokes = getStoredData("jokesData") || [];
+  storedJokes.forEach((joke) => {
+    displayTextBox(joke);
+  });
+
+  const storedFacts = getStoredData("factsData") || [];
+  storedFacts.forEach((fact) => {
+    displayTextBox(fact);
+  });
+  // TODO:potential scroll down button
+  scrollDownButton.addEventListener("click", () => {
+    const container = document.getElementById("questionContainer");
   
-  //   if (event.deltaY > 0) {
-  //     container.scrollBy({
-  //       top: -1000,
-  //       behavior: "smooth",
-  //     });
-  //   } 
-  // });
+    container.scrollBy({
+      top: 100000000, 
+      behavior: "smooth",
+    });
+  });
 
   }

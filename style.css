@@ -420,8 +420,16 @@ body {
   padding: 8px;
 }
 
+
+.scrollDownButtonContainer{
+  display: flex;
+  justify-content: center;
+}
+
 .scrollDownButton{
   background: transparent;
   border: none;
   color: white;
+  font-weight: 300;
+  cursor: pointer;
 }
