@@ -15,13 +15,21 @@ module.exports={
   },
   module: {
     rules: [
-      {  test: /\.css$/, use: [MiniCssExtractPlugin.loader,'css-loader'] }
+      // {  test: /\.css$/, use: [MiniCssExtractPlugin.loader,'css-loader'] },
+      {
+        test:  /\.s[ac]ss$/i,
+        use:[
+          'style-loader',
+          'css-loader',
+          'sass-loader'
+        ]
+      }
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({ template: './index.html' }),
     new MiniCssExtractPlugin({
-      filename: 'style.css', 
+      filename: 'main.scss', 
     }),
   ],
   mode: "development",

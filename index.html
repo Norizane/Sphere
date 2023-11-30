@@ -1,23 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=K2D:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./main.scss">
   <title>Sphere</title>
-
 </head>
-
 <body>
-
   <input id="menu__toggle" class="menu__input" type="checkbox" />
   <label class="menu__btn" for="menu__toggle">
     <span></span>
@@ -31,70 +25,45 @@
     <li><a class="menu__item" href="#">GitHub</a></li>
   </ul>
 
-  </div>
-
   <div class="front-page">
-
-    <header class="front-page__header">
-
+    <header class="header">
       <div>
-        <h1 class="front-page__logo" id="Logo">Sphere</h1>
+        <h1 class="logo" id="Logo">Sphere</h1>
       </div>
-
     </header>
 
-    <section class="front-page__Sphere animate" id="animation">
+    <section class="Sphere animate" id="animation">
       <figure class="ball">
         <span class="shadow"></span>
         <span id="iris" class="iris"></span>
       </figure>
     </section>
 
-    <footer class="front-page__footer" id="footerSection">
-
-      <h1 class="front-page__title">Ask me question</h1>
-      <span class="material-symbols-outlined">
-        expand_more
-      </span>
-
+    <footer class="footer" id="footerSection">
+      <h1 class="title">Ask me a question</h1>
+      <span class="material-symbols-outlined">expand_more</span>
     </footer>
-
   </div>
 
   <div id="secondSection" class="secondSection">
-
-    <form class="question-page__question-container" method="dialog">
-      <div class="question-page__question-form">
-
-        <input type="text" id="questionInput" class="question-input" placeholder="Ask me question">
-        <button class="question-page__clearButton material-symbols-outlined" type="reset">
-          disabled_by_default
-        </button>
-
+    <form class="question-container" method="dialog">
+      <div class="form">
+        <input type="text" id="questionInput" class="Input" placeholder="Ask me a question">
+        <button class="clearButton material-symbols-outlined" type="reset">disabled_by_default</button>
       </div>
     </form>
 
-    <div class="tellme-container">
-
-      <button id="factButton" class="tellme-firstButton">Tell me fun fact</button>
-      <button id="jokeButton" class="tellme-secondButton">Tell me a joke</button>
-
+    <div class="tell-me-container">
+      <button id="factButton" class="firstButton">Tell me a fun fact</button>
+      <button id="jokeButton" class="secondButton">Tell me a joke</button>
     </div>
-  
 
-    <div id="questionContainer" class="question-page__answer">
-
+    <div id="answerContainer" class="answerContainer">
       <div class="scrollDownButtonContainer">
-        
-        <button class="scrollDownButton material-symbols-outlined" id="scrollDownButton">
-          expand_circle_down
-        </button>
+        <button class="scrollDownButton material-symbols-outlined" id="scrollDownButton">expand_circle_down</button>
       </div>
-
-      <div id="answerOutput" class="answerContainer"></div>
-
+      <div id="answerOutput" class="answerOutput"></div>
     </div>
-
+  </div>
 </body>
-
 </html>

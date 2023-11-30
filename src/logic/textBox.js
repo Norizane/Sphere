@@ -68,7 +68,7 @@ export const initTextBoxBehavior = () => {
   });
 
   scrollDownButton.addEventListener("click", () => {
-    const container = document.getElementById("questionContainer");
+    const container = document.getElementById("answerContainer");
     container.scrollBy({
       top: 100000000,
       behavior: "smooth",

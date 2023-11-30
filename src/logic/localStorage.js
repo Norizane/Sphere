@@ -14,10 +14,10 @@ export const addData = (type, text) => {
   storedData.push(newItem);
   setStoredData(storedData);
 };
-
-export const clearStoredData = () => {
-  localStorage.removeItem("storedData");
-};
+//Zostawiam to na wypadek dodania funkcji uswania chatu 
+// export const clearStoredData = () => {
+//   localStorage.removeItem("storedData");
+// };
 
 export const displayStoredData = () => {
   const storedData = getStoredData();
