@@ -1,7 +1,7 @@
 $background-color: #654F6F;
-$text-color: #B6A6CA;
+$secondary-color: #B6A6CA;
 $primary-color: #553555;
-$secondary-color: #fcfcfc;
+$text-color: #fcfcfc;
 $tertiary-color: #efeff1;
 
 * {
@@ -20,7 +20,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: $text-color;
+  color: $secondary-color;
 
   .logo {
     font-size: 96px;
@@ -121,7 +121,7 @@ body {
       margin: 0;
       border-radius: 50%;
       position: relative;
-      background: radial-gradient(circle at 50% 40%, $secondary-color, $tertiary-color 66%, $primary-color 100%);
+      background: radial-gradient(circle at 50% 40%, $text-color, $tertiary-color 66%, $primary-color 100%);
 
       .shadow {
         position: absolute;
@@ -138,7 +138,7 @@ body {
       height: 40%;
       margin: 30%;
       border-radius: 50%;
-      background: radial-gradient(circle at 50% 50%, $text-color 0%, $primary-color 30%, $background-color 100%);
+      background: radial-gradient(circle at 50% 50%, $secondary-color 0%, $primary-color 30%, $background-color 100%);
       transform: translateX(68px) translateY(-60px) skewX(15deg) skewY(2deg);
       position: absolute;
       animation: move-eye-skew 5s ease-out infinite;
@@ -186,7 +186,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: $text-color;
+    background-color: $secondary-color;
     width: 430px;
     border-radius: 8px;
 
@@ -202,7 +202,7 @@ body {
       width: 400px;
       border-radius: 8px;
       border-color: transparent;
-      background-color: $text-color;
+      background-color: $secondary-color;
       outline: transparent;
       color: $primary-color;
     }
@@ -219,7 +219,7 @@ body {
   height: 400px;
   width: 600px;
   border-radius: 8px;
-  background-color: $text-color;
+  background-color: $secondary-color;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
   color: $primary-color;
   overflow: auto;
@@ -353,7 +353,7 @@ body {
   margin: 0;
   padding: 80px 0;
   list-style: none;
-  background-color: $background-color;
+  background-color: $secondary-color;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
   transition: .5s ease-in-out;
 
