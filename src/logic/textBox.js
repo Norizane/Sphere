@@ -3,6 +3,7 @@ import {
   addData,
   displayStoredData,
 } from "./localStorage";
+import axios from 'axios';
 
 const getTextBoxData = (data) => {
   const randomNumber = Math.floor(Math.random() * data.length);
@@ -10,13 +11,14 @@ const getTextBoxData = (data) => {
 };
 
 const displayTextBox = (text) => {
-  const Paragraph = document.createElement("p");
+  const paragraph = document.createElement("div");
   const answerOutput = document.getElementById("answerOutput");
 
-  Paragraph.innerHTML = text;
+  paragraph.innerHTML = text;
 
-  Paragraph.classList.add("textBox");
-  answerOutput.appendChild(Paragraph);
+  paragraph.classList.add("textBox");
+
+  answerOutput.appendChild(paragraph);
 };
 
 const showAnswerForQuestion = (question, answer) => {
@@ -77,3 +79,23 @@ export const initTextBoxBehavior = () => {
 
   displayStoredData();
 };
+
+
+const apiUrl = 'https://api.publicapis.org/entries';
+
+
+const queryParams = {
+  key1: 'apiKey',
+  key2: 'Axolotl'
+};
+
+
+axios.get(apiUrl, {
+  params: queryParams,
+})
+  .then(response => {
+    console.log('Dane z serwera:', response.data);
+  })
+  .catch(error => {
+    console.error('Błąd zapytania:', error);
+  });

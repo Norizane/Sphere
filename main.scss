@@ -43,7 +43,7 @@ body {
     font-size: 19px;
   }
 
-  .Sphere {
+  .sphere {
     width: 80vh;
     height: 80vh;
     display: flex;
@@ -197,7 +197,7 @@ body {
       font-weight: 200;
     }
 
-    .Input {
+    .input {
       padding: 8px;
       width: 400px;
       border-radius: 8px;
@@ -369,4 +369,8 @@ body {
       box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
     }
   }
+}
+
+.copyIcon{
+  color: white;
 }
