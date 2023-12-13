@@ -1,0 +1,36 @@
+{
+  "name": "sphere",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "start": "http-server dist -c-1 -o"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Norizane/Sphere.git"
+  },
+  "keywords": [],
+  "author": "Dawid Paśko/Norizane",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Norizane/Sphere/issues"
+  },
+  "homepage": "https://github.com/Norizane/Sphere#readme",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "devDependencies": {
+    "css-loader": "^6.8.1",
+    "html-webpack-plugin": "^5.5.3",
+    "http-server": "^14.1.1",
+    "mini-css-extract-plugin": "^2.7.6",
+    "sass": "^1.69.5",
+    "sass-loader": "^13.3.2",
+    "style-loader": "^3.3.3"
+  }
+}
