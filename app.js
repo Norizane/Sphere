@@ -1,7 +1,7 @@
-// import './style.css';
 import './main.scss';
-import { initTextBoxBehavior  } from './src/logic/textBox'
-import {initAnswerBehavior} from './src/logic/textBoxData';
+import { initTextBoxBehavior  } from './src/logic/textBox';
+
+
 
 
 const animateScrollDown = () => {
@@ -31,5 +31,6 @@ window.addEventListener("wheel", () => {
   animateScrollDown();
   animationChange();
 });
+
 
 initTextBoxBehavior();
