@@ -47,6 +47,23 @@ export const initTextBoxBehavior = () => {
   const factButton = document.getElementById("factButton");
   const scrollDownButton = document.getElementById("scrollDownButton");
 
+
+  let isScrollDownExecuted = false;
+
+  const scrollDown = () => {
+    if (!isScrollDownExecuted) {
+      const container = document.getElementById("answerContainer");
+  
+      container.scrollTo({
+        top: container.scrollHeight,
+        behavior: "smooth",
+      });
+  
+      isScrollDownExecuted = true;
+    }
+  };
+ 
+
   jokeButton.addEventListener("click", () => {
     sendMessage("Tell me a joke").then((jokeResponse) => {
       displayTextBox(jokeResponse);
@@ -76,6 +93,8 @@ export const initTextBoxBehavior = () => {
     });
   });
 
+
+  setTimeout(scrollDown, 5000);
   displayStoredData();
 };
 

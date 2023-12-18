@@ -212,6 +212,7 @@ body {
 .answerContainer {
   &::-webkit-scrollbar {
     display: none;
+    scroll-behavior: smooth;
   }
 
   padding: 10px;

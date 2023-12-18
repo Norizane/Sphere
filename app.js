@@ -26,6 +26,7 @@ const animationChange = () => {
   iris.style.animation = " move-eye-skew2 5s ease-out infinite";
 };
 
+
 window.addEventListener("wheel", () => {
   animateQuestionSection();
   animateScrollDown();
