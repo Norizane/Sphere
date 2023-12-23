@@ -3,6 +3,7 @@ $secondary-color: #B6A6CA;
 $primary-color: #553555;
 $text-color: #fcfcfc;
 $tertiary-color: #efeff1;
+$transition-duration: 2s;
 
 * {
   margin: 0;
@@ -36,7 +37,22 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20px 0 60px 0px;
+    margin-top: 20px;
+    opacity: 1;
+    height: auto;
+    margin-top: 20px;
+    visibility: visible;
+    transition: opacity $transition-duration ease-out,
+      height $transition-duration ease-out,
+      margin-top $transition-duration ease-out,
+      visibility $transition-duration ease-out;
+
+    &.footer-hide {
+      opacity: 0;
+      height: 0;
+      margin-top: -60px;
+      visibility: hidden;
+    }
   }
 
   .title {
@@ -174,6 +190,7 @@ body {
   opacity: 0;
   transition: opacity 1s ease-in-out;
   transition-delay: 2s;
+  margin-top: 70px;
 
   .question-container {
     display: flex;
@@ -209,6 +226,26 @@ body {
   }
 }
 
+.scrollDownButtonContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  .scrollDownButtonHeader {
+    color: white;
+    font-size: small;
+    margin-right: 5px;
+  }
+
+  .scrollDownButton {
+    background: transparent;
+    border: none;
+    font-weight: 800;
+    cursor: pointer;
+    color: white;
+  }
+}
+
 .answerContainer {
   &::-webkit-scrollbar {
     display: none;
@@ -217,7 +254,7 @@ body {
 
   padding: 10px;
   margin: 1rem auto;
-  height: 400px;
+  height: 450px;
   width: 600px;
   border-radius: 8px;
   background-color: $secondary-color;
@@ -227,18 +264,6 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 
-  .scrollDownButtonContainer {
-    display: flex;
-    justify-content: center;
-
-    .scrollDownButton {
-      background: transparent;
-      border: none;
-      color: white;
-      font-weight: 300;
-      cursor: pointer;
-    }
-  }
 }
 
 .tell-me-container {
@@ -294,21 +319,21 @@ body {
   opacity: 0;
 }
 
-#menu__toggle:checked + .menu__btn > span {
+#menu__toggle:checked+.menu__btn>span {
   transform: rotate(45deg);
 }
 
-#menu__toggle:checked + .menu__btn > span::before {
+#menu__toggle:checked+.menu__btn>span::before {
   top: 0;
   transform: rotate(0deg);
 }
 
-#menu__toggle:checked + .menu__btn > span::after {
+#menu__toggle:checked+.menu__btn>span::after {
   top: 0;
   transform: rotate(90deg);
 }
 
-#menu__toggle:checked ~ .menu__box {
+#menu__toggle:checked~.menu__box {
   right: 0 !important;
 }
 
@@ -321,9 +346,9 @@ body {
   cursor: pointer;
   z-index: 1001;
 
-  > span,
-  > span::before,
-  > span::after {
+  >span,
+  >span::before,
+  >span::after {
     display: block;
     position: absolute;
     width: 100%;
@@ -332,12 +357,12 @@ body {
     transition-duration: 0.25s;
   }
 
-  > span::before {
+  >span::before {
     content: '';
     top: -8px;
   }
 
-  > span::after {
+  >span::after {
     content: '';
     top: 8px;
   }
@@ -372,6 +397,6 @@ body {
   }
 }
 
-.copyIcon{
+.copyIcon {
   color: white;
 }

@@ -1,8 +1,5 @@
-import './main.scss';
-import { initTextBoxBehavior  } from './src/logic/textBox';
-
-
-
+import "./main.scss";
+import { initTextBoxBehavior } from "./src/logic/textBox";
 
 const animateScrollDown = () => {
   const element = document.getElementById("animation");
@@ -10,8 +7,17 @@ const animateScrollDown = () => {
   const Logo = document.getElementById("Logo");
 
   element.style.marginTop = "-560px";
-  footer.style.marginBottom = "0";
   Logo.style.marginTop = "16px";
+
+  footer.classList.add("footer-hide");
+};
+
+const scrollDownAnimation = () => {
+  const header = document.getElementById("scrollDownHeader");
+
+  setTimeout(() => {
+    header.classList.add("hidden");
+  }, 2000);
 };
 
 const animateQuestionSection = () => {
@@ -26,12 +32,11 @@ const animationChange = () => {
   iris.style.animation = " move-eye-skew2 5s ease-out infinite";
 };
 
-
 window.addEventListener("wheel", () => {
   animateQuestionSection();
   animateScrollDown();
   animationChange();
 });
 
-
 initTextBoxBehavior();
+scrollDownAnimation();

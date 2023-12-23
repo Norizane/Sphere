@@ -2,7 +2,7 @@ const axios = require("axios");
 import { key } from '../../key';
 
 
-export let chatResponse = '';
+ let chatResponse = '';
 
 export const createOpenAIAxiosClient = () => {
   const apiKey = key;
@@ -16,12 +16,12 @@ export const createOpenAIAxiosClient = () => {
   return client;
 };
 
-export const sendMessage = (userQuestion) => {
+export const sendMessage = async (userQuestion) => {
   const openAIAxios = createOpenAIAxiosClient();
 
   const params = {
     messages: [
-      { role: "system", content: "you are the all-seeing eye.ś" },
+      { role: "system", content: "You are a helpful assistant." },
       { role: "user", content: userQuestion },
     ],
     model: 'gpt-3.5-turbo',
@@ -29,17 +29,11 @@ export const sendMessage = (userQuestion) => {
     temperature: 0,
   };
 
-  
-  return openAIAxios.post("https://api.openai.com/v1/chat/completions", params)
-    .then((results) => {
-      const chatResponse = results.data.choices[0]?.message.content;
-
-
-    
-      return chatResponse;
-    })
-    .catch((err) => {
-      console.error(err);
-    });
+  try {
+    const results = await openAIAxios.post("https://api.openai.com/v1/chat/completions", params);
+    const chatResponse = results.data.choices[0]?.message.content;
+    return chatResponse;
+  } catch (err) {
+    console.error(err);
+  }
 };
-

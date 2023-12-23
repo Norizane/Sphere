@@ -2,7 +2,7 @@ import {
   addData,
   displayStoredData,
 } from "./localStorage";
-import { sendMessage, jokesAndFacts, chatResponse} from "./chatGPT";
+import { sendMessage} from "./chatGPT";
 
 
 const displayTextBox = (text) => {
@@ -39,19 +39,20 @@ const questionOutput = () => {
     showAnswerForQuestion(questionText, chatResponse);
     addData("Question", questionText);
     addData("Answer", chatResponse);
+    
   });
+  
 };
 
 export const initTextBoxBehavior = () => {
   const jokeButton = document.getElementById("jokeButton");
   const factButton = document.getElementById("factButton");
-  const scrollDownButton = document.getElementById("scrollDownButton");
+  const question = document.getElementById("questionInput")
 
-
-  let isScrollDownExecuted = false;
+  
 
   const scrollDown = () => {
-    if (!isScrollDownExecuted) {
+  
       const container = document.getElementById("answerContainer");
   
       container.scrollTo({
@@ -59,8 +60,6 @@ export const initTextBoxBehavior = () => {
         behavior: "smooth",
       });
   
-      isScrollDownExecuted = true;
-    }
   };
  
 
@@ -68,6 +67,7 @@ export const initTextBoxBehavior = () => {
     sendMessage("Tell me a joke").then((jokeResponse) => {
       displayTextBox(jokeResponse);
       addData("Joke", jokeResponse);
+      scrollDown();
     });
   });
 
@@ -76,25 +76,19 @@ export const initTextBoxBehavior = () => {
     sendMessage("Tell me a fact").then((factResponse) => {
       displayTextBox(factResponse);
       addData("Fact", factResponse);
+      scrollDown();
     });
   });
 
-  window.addEventListener("keyup", (event) => {
+  question.addEventListener("keyup", (event) => {
     if (event.key === "Enter") {
       questionOutput();
+      scrollDown();
     }
   });
   
-  scrollDownButton.addEventListener("click", () => {
-    const container = document.getElementById("answerContainer");
-    container.scrollBy({
-      top: 100000000,
-      behavior: "smooth",
-    });
-  });
 
-
-  setTimeout(scrollDown, 5000);
+  setTimeout(scrollDown, 4000);
   displayStoredData();
 };
 
