@@ -21,7 +21,7 @@ export const sendMessage = async (userQuestion) => {
 
   const params = {
     messages: [
-      { role: "system", content: "You are a helpful assistant." },
+      { role: "system", content: "Personal assistant." },
       { role: "user", content: userQuestion },
     ],
     model: 'gpt-3.5-turbo',
