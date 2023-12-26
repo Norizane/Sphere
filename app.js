@@ -1,8 +1,5 @@
-// import './style.css';
-import './main.scss';
-import { initTextBoxBehavior  } from './src/logic/textBox'
-import {initAnswerBehavior} from './src/logic/textBoxData';
-
+import "./main.scss";
+import { initTextBoxBehavior } from "./src/logic/textBox";
 
 const animateScrollDown = () => {
   const element = document.getElementById("animation");
@@ -10,8 +7,17 @@ const animateScrollDown = () => {
   const Logo = document.getElementById("Logo");
 
   element.style.marginTop = "-560px";
-  footer.style.marginBottom = "0";
   Logo.style.marginTop = "16px";
+
+  footer.classList.add("footer-hide");
+};
+
+const scrollDownAnimation = () => {
+  const header = document.getElementById("scrollDownHeader");
+
+  setTimeout(() => {
+    header.classList.add("hidden");
+  }, 2000);
 };
 
 const animateQuestionSection = () => {
@@ -33,3 +39,4 @@ window.addEventListener("wheel", () => {
 });
 
 initTextBoxBehavior();
+scrollDownAnimation();

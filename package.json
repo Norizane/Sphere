@@ -21,6 +21,7 @@
   "homepage": "https://github.com/Norizane/Sphere#readme",
   "dependencies": {
     "axios": "^1.6.2",
+    "openai": "^4.22.1",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4"
   },
